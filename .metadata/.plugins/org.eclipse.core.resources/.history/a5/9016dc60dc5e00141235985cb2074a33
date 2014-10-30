@@ -1,0 +1,18 @@
+package DAO;
+
+import org.hibernate.SessionFactory;
+
+public class AreaDAO {
+
+	private static AreaDAO instancia = null;
+	private static SessionFactory sf = null;
+	
+	public static AreaDAO getInstancia(){
+		if(instancia == null){
+			sf = HibernateUtil.getSessionFactory();
+			instancia = new AreaDAO();
+		}
+		return instancia;
+	}
+	
+}

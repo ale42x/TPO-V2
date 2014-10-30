@@ -1,0 +1,24 @@
+package DAO;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import Entity.Area;
+import Entity.Deposito;
+import HBT.HibernateUtil;
+
+public class DepositoDAO {
+
+	private static DepositoDAO instancia = null;
+	private static SessionFactory sf = null;
+	
+	public static DepositoDAO getInstancia(){
+		if(instancia == null){
+			sf = HibernateUtil.getSessionFactory();
+			instancia = new DepositoDAO();
+		}
+		return instancia;
+	}
+
+
+}

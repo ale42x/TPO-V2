@@ -1,0 +1,44 @@
+package DAO;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import Entity.Area;
+import HBT.HibernateUtil;
+
+public class AreaDAO {
+
+	private static AreaDAO instancia = null;
+	private static SessionFactory sf = null;
+	
+	public static AreaDAO getInstancia(){
+		if(instancia == null){
+			sf = HibernateUtil.getSessionFactory();
+			instancia = new AreaDAO();
+		}
+		return instancia;
+	}
+
+	public void grabarArea(Area area) {
+		
+		
+		System.out.println("AREA DAO");
+		Session session = sf.openSession();
+		session.beginTransaction();
+		
+		session.persist(area);
+		session.flush();
+		session.getTransaction().commit();
+		session.close();
+		
+	}
+
+	public String leerDeposito(int id_deposito) {
+		Session session = sf.openSession();
+		String deposito = session.createQuery("select descripcion from Deposito where id_deposito = :id")
+								 .setString(id_deposito,"id").uniqueResult();
+		session.close();
+		return deposito;
+	}
+	
+}

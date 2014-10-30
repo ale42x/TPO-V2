@@ -1,0 +1,41 @@
+package Entity;
+
+import javax.persistence.*;
+
+import net.sourceforge.jtds.jdbc.DateTime;
+
+
+@Entity
+@Table (name="HistoricoMantenimiento")
+public class Historico {
+	
+	
+@Id
+private	int id_historico ;
+
+@ManyToOne
+@JoinColumn(name="id_vehiculo")
+private Vehiculo vehiculo;
+
+private DateTime fecha;
+public int getId_historico() {
+	return id_historico;
+}
+public void setId_historico(int id_historico) {
+	this.id_historico = id_historico;
+}
+
+public Vehiculo getVehiculo() {
+	return vehiculo;
+}
+public void setVehiculo(Vehiculo vehiculo) {
+	this.vehiculo = vehiculo;
+}
+public DateTime getFecha() {
+	return fecha;
+}
+public void setFecha(DateTime fecha) {
+	this.fecha = fecha;
+} 
+
+}

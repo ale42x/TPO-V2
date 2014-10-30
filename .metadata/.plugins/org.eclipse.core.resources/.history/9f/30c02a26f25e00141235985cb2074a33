@@ -1,0 +1,59 @@
+package Entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table (name="Recibo")
+public class Recibo {
+
+	@Id
+	private int ID_Recibo;	
+	@ManyToOne
+	@JoinColumn(name="id_cliente")
+	private Cliente Cliente;	
+	private int id_itemRecibo; 
+	private int Cantidad;		
+	private int Importe;
+	
+	@OneToMany (cascade=CascadeType.ALL)
+	@JoinColumn(name="id_Paquete")
+	private List<Paquete> paquetes = new ArrayList<Paquete>();
+
+	
+	public List<Paquete> getPaquetes() {
+		return paquetes;
+	}
+	public void setPaquetes(List<Paquete> paquetes) {
+		this.paquetes = paquetes;
+	}
+	public int getID_Recibo() {
+		return ID_Recibo;
+	}
+	public void setID_Recibo(int iD_Recibo) {
+		ID_Recibo = iD_Recibo;
+	}
+
+	public int getId_itemRecibo() {
+		return id_itemRecibo;
+	}
+	public void setId_itemRecibo(int id_itemRecibo) {
+		this.id_itemRecibo = id_itemRecibo;
+	}
+	public int getCantidad() {
+		return Cantidad;
+	}
+	public void setCantidad(int cantidad) {
+		Cantidad = cantidad;
+	}
+	public int getImporte() {
+		return Importe;
+	}
+	public void setImporte(int importe) {
+		Importe = importe;
+	}		
+
+	
+}

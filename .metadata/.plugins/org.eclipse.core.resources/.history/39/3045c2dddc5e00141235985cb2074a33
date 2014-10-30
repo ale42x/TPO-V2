@@ -1,0 +1,34 @@
+package DAO;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import Entity.Area;
+import HBT.HibernateUtil;
+
+public class AreaDAO {
+
+	private static AreaDAO instancia = null;
+	private static SessionFactory sf = null;
+	
+	public static AreaDAO getInstancia(){
+		if(instancia == null){
+			sf = HibernateUtil.getSessionFactory();
+			instancia = new AreaDAO();
+		}
+		return instancia;
+	}
+
+	public void grabarArea(Area area) {
+		
+		Session session = sf.openSession();
+		session.beginTransaction();
+		
+		session.persist(area);
+		session.flush();
+		session.getTransaction().commit();
+		session.close();
+		
+	}
+	
+}

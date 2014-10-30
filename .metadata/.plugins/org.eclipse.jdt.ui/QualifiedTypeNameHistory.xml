@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="java.rmi.RemoteException"/>
+<fullyQualifiedTypeName name="Entity.Envio"/>
+<fullyQualifiedTypeName name="Entity.Historico"/>
+<fullyQualifiedTypeName name="Entity.Manifiesto"/>
+<fullyQualifiedTypeName name="Entity.PlanDeMantenimiento"/>
+<fullyQualifiedTypeName name="Entity.RemitoIntersucursal"/>
+<fullyQualifiedTypeName name="Entity.Sector"/>
+<fullyQualifiedTypeName name="Entity.TareaMantenimiento"/>
+<fullyQualifiedTypeName name="Entity.Tracking"/>
+<fullyQualifiedTypeName name="Entity.VehiculoSubcontratado"/>
+<fullyQualifiedTypeName name="DAO.AreaDAO"/>
+<fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+<fullyQualifiedTypeName name="HBT.HibernateUtil"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="Entity.Vehiculo"/>
+<fullyQualifiedTypeName name="Entity.Remito"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="Entity.EmpresaSubcontratada"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumns"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="Entity.Recibo"/>
+<fullyQualifiedTypeName name="Entity.Cliente"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+<fullyQualifiedTypeName name="Entity.Sucursal"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Entity.Deposito"/>
+<fullyQualifiedTypeName name="DAO.DepositoDAO"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="Entity.Area"/>
+</qualifiedTypeNameHistroy>
