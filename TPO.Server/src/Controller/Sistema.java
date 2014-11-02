@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import Bean.SectorDTO;
+import Bean.SucursalDTO;
 import DAO.AreaDAO;
 import Entity.Area;
 import Interface.InterfaceEnvio;
@@ -55,6 +56,12 @@ public class Sistema extends UnicastRemoteObject implements InterfaceEnvio  {
 	public SectorDTO leerSector(int id_sector) throws RemoteException {
 		
 		return dao.leerSector(id_sector);
+	}
+
+	@Override
+	public SucursalDTO leetSucursal(int id_sucursal) throws RemoteException {
+		// 
+		return dao.leerSucursal(id_sucursal);
 	}
 
 	//Llamadas a las funciones de los DAO

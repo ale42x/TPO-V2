@@ -1,14 +1,14 @@
 package DAO;
 
-import java.io.Serializable;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import Bean.SectorDTO;
+import Bean.SucursalDTO;
 import Entity.Area;
 import Entity.Deposito;
 import Entity.Sector;
+import Entity.Sucursal;
 import HBT.HibernateUtil;
 
 public class AreaDAO {
@@ -48,6 +48,8 @@ public class AreaDAO {
 		//Deposito deposito = (Deposito) session2.load(Deposito.class, id_deposito);
 		Deposito depo = new Deposito();
 		depo.setSucursal(null);
+
+		//depo = (Deposito) session2.createQuery("from Deposito where id_Deposito = :id").setParameter("id", id_deposito);
 		depo = (Deposito) session2.createQuery("from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
 		//Deposito deposito = (Deposito) session2.createQuery("select descripcion from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
 		//String depo = (String) session2.createQuery("select descripcion from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
@@ -88,6 +90,16 @@ public class AreaDAO {
 		SectorDTO dto = new SectorDTO(sector.getId_Sector(), sector.getGondola(), sector.getNumero(), sector.getDescripcion(), sector.getCondicionEspecial());
 		
 		return dto;
+	}
+
+	public SucursalDTO leerSucursal(int id_sucursal) {
+		Sucursal sucu = new Sucursal();
+		Session se = sf.openSession();
+		 
+		sucu = (Sucursal) se.createQuery("from Sucursal where id_sucursal = :id").setParameter("id",id_sucursal).uniqueResult();
+		SucursalDTO sucuDTO = new SucursalDTO(sucu.getId_Sucursal(), sucu.getNombreSucursal(), sucu.getProvincia(), sucu.getCP(), sucu.getTelefono(),null);
+		
+		return sucuDTO; 
 	}
 	
 }

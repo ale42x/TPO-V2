@@ -1,10 +1,23 @@
 package Bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SucursalDTO  implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public List<RutaDTO> getRutas() {
+		return rutas;
+	}
+
+	public void setRutas(List<RutaDTO> rutas) {
+		this.rutas = rutas;
+	}
+
 	private int id_Sucursal;
 	private String NombreSucursal;
 	private String Provincia;
@@ -12,6 +25,7 @@ public class SucursalDTO  implements Serializable {
 	private String telefono;
 	private DepositoDTO deposito;
 	private List<EmpleadoDTO> empleados;
+	private List<RutaDTO> rutas = new ArrayList<RutaDTO>();
 	
 	public SucursalDTO(int id_Sucursal, String nombreSucursal,
 			String provincia, String cP, String telefono, DepositoDTO deposito) {

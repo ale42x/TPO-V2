@@ -1,5 +1,6 @@
 package Entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +8,12 @@ import javax.persistence.*;
 
 @Entity
 @Table (name="Sucursal")
-public class Sucursal {
+public class Sucursal implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	//@OneToOne
 	private int id_Sucursal;
@@ -42,6 +47,15 @@ public class Sucursal {
 	inverseJoinColumns 	= @JoinColumn(name="id_Ruta"))	
 	private List<Ruta> rutas = new ArrayList<Ruta>();
 	
+	
+	public Deposito getDeposito() {
+		return deposito;
+	}
+
+	public void setDeposito(Deposito deposito) {
+		this.deposito = deposito;
+	}
+
 	public int getId_Sucursal() {
 		return id_Sucursal;
 	}

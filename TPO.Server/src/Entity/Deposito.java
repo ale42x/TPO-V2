@@ -1,5 +1,6 @@
 package Entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +16,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name="Deposito")
-public class Deposito {
+public class Deposito implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private int id_Deposito;
 	private String 	descripcion;

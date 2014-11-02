@@ -15,5 +15,7 @@ public interface InterfaceEnvio extends Remote {
 	public String leerArea(int idArea)throws RemoteException;
 
 	public SectorDTO leerSector(int i) throws RemoteException;
+
+	public SucursalDTO leetSucursal(int i)throws RemoteException;
 	
 }

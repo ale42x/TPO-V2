@@ -5,6 +5,7 @@ import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 
 import Bean.SectorDTO;
+import Bean.SucursalDTO;
 import Interface.InterfaceEnvio;
 
 
@@ -48,10 +49,17 @@ public class Inicio {
     		System.out.println(desc);
     */	
     		// Leo un Sector
+    		System.out.println("Leo un Sector");
     		SectorDTO sector = remoteInterface.leerSector(1);
     		System.out.println("sector"+sector.getDescripcion());
     		
+    		//Leo la sucursal
+    		System.out.println("Leo la sucursal");
+    		SucursalDTO sucursal = remoteInterface.leetSucursal(1);
+    		System.out.println("Sucursal"+sucursal.getNombreSucursal());
+    		
     		//Leo un deposito
+    		System.out.println("Leo un deposito");
     		String depo = remoteInterface.leerDeposito(1);
     		System.out.println(depo);
     	}
