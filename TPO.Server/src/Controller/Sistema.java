@@ -3,6 +3,7 @@ package Controller;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+import Bean.DepositoDTO;
 import Bean.SectorDTO;
 import Bean.SucursalDTO;
 import DAO.AreaDAO;
@@ -62,6 +63,12 @@ public class Sistema extends UnicastRemoteObject implements InterfaceEnvio  {
 	public SucursalDTO leetSucursal(int id_sucursal) throws RemoteException {
 		// 
 		return dao.leerSucursal(id_sucursal);
+	}
+
+	@Override
+	public DepositoDTO leerDeposito2(int i) throws RemoteException {
+
+		return dao.leerDeposito2(i);
 	}
 
 	//Llamadas a las funciones de los DAO

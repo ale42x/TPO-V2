@@ -9,7 +9,10 @@ public class DepositoDTO implements Serializable{
 	private String 	descripcion;
 	private List<SectorDTO> sectores;
 	
-	
+	public DepositoDTO() {
+        super();
+        // TODO Auto-generated constructor stub
+}
 	
 	public DepositoDTO(int id_Deposito, String descripcion,
 			List<SectorDTO> sectores) {

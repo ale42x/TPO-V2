@@ -4,6 +4,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 
+import Bean.DepositoDTO;
 import Bean.SectorDTO;
 import Bean.SucursalDTO;
 import Interface.InterfaceEnvio;
@@ -52,6 +53,10 @@ public class Inicio {
     		System.out.println("Leo un Sector");
     		SectorDTO sector = remoteInterface.leerSector(1);
     		System.out.println("sector"+sector.getDescripcion());
+    		
+    		//leo deposito 2 pablo
+    		System.out.println("leo deposito 2 pablo");
+    		DepositoDTO deposito  = remoteInterface.leerDeposito2(1);
     		
     		//Leo la sucursal
     		System.out.println("Leo la sucursal");

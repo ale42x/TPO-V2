@@ -3,6 +3,7 @@ package DAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import Bean.DepositoDTO;
 import Bean.SectorDTO;
 import Bean.SucursalDTO;
 import Entity.Area;
@@ -100,6 +101,22 @@ public class AreaDAO {
 		SucursalDTO sucuDTO = new SucursalDTO(sucu.getId_Sucursal(), sucu.getNombreSucursal(), sucu.getProvincia(), sucu.getCP(), sucu.getTelefono(),null);
 		
 		return sucuDTO; 
+	}
+
+	public DepositoDTO leerDeposito2(int id_deposito) {
+		SessionFactory sf =  HibernateUtil.getSessionFactory();
+		Session session = sf.getCurrentSession();
+		
+		org.hibernate.Transaction t =  session.beginTransaction();
+		Entity.Deposito deposito = (Entity.Deposito) session.createQuery("from Deposito d where d.id_Deposito = :id_Deposito").setInteger("id_Deposito", id_deposito).uniqueResult();
+		Bean.DepositoDTO res = new Bean.DepositoDTO(deposito.getId_Deposito(), deposito.getDescripcion(), null);
+		
+		res.setId_Deposito(deposito.getId_Deposito());
+		res.setDescripcion(deposito.getDescripcion());
+		res.setSectores(null);
+		t.commit();
+		session = null;
+		return res;
 	}
 	
 }
