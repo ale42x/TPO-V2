@@ -21,6 +21,14 @@ public class Deposito {
 	@JoinColumn(name="id_Deposito")
 	private List<Sector> sectores = new ArrayList<Sector>();
 	
+	public Sucursal getSucursal() {
+		return sucursal;
+	}
+
+	public void setSucursal(Sucursal sucursal) {
+		this.sucursal = sucursal;
+	}
+
 	//@OneToOne
 	//@OneToOne(cascade = CascadeType.ALL)
     //@PrimaryKeyJoinColumn
@@ -30,15 +38,6 @@ public class Deposito {
 	@OneToOne//(cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 	private Sucursal sucursal;
-	
-	
-	public Sucursal getSucursal() {
-		return sucursal;
-	}
-
-	public void setSucursal(Sucursal sucursal) {
-		this.sucursal = sucursal;
-	}
 	
 	public int getId_Deposito() {
 		return id_Deposito;

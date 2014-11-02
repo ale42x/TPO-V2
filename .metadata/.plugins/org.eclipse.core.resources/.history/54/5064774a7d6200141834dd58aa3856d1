@@ -50,8 +50,8 @@ public class Inicio {
     		System.out.println("sector"+sector.getDescripcion());
     		
     		//Leo un deposito
-    		String depo = remoteInterface.leerDeposito(1);
-    		System.out.println(depo);
+    	//	String depo = remoteInterface.leerDeposito(1);
+    	//	System.out.println(depo);
     	}
 	}
 
