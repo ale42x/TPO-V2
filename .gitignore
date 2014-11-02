@@ -64,3 +64,4 @@ TPO.Server/src/hibernate.properties
 TPO.Server/bin/Server/RMIServer.class
 TPO.Server/bin/hibernate.properties
 *.snap
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
