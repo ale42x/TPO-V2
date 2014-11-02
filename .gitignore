@@ -47,11 +47,7 @@ Temporary Items
 .xml
 TPO.Cliente/bin/Inicio.class
 TPO.Cliente/bin/Inicio.class
-.metadata/.plugins/org.eclipse.core.resources/.history/58/a050aa5aa36200141212a8f3fb118f40
-.metadata/.plugins/org.eclipse.core.resources/.history/58/a050aa5aa36200141212a8f3fb118f40
-.metadata/.plugins/org.eclipse.core.resources/.history/58/a050aa5aa36200141212a8f3fb118f40
-.metadata/.plugins/org.eclipse.core.resources/.history/80/103a1a96a36200141212a8f3fb118f40
-.metadata/.plugins/org.eclipse.core.resources/.history/bf/f057b84fa36200141212a8f3fb118f40
+.metadata/.plugins/*
 .metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap
 *.snap
 *.index
@@ -59,14 +55,10 @@ TPO.Cliente/bin/Inicio.class
 *.xmi
 *.index
 *.xmi
-<<<<<<< HEAD
-*.xmi
 .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
-=======
 TPO.Server/src/Server/RMIServer.java
 TPO.Server/src/hibernate.properties
 TPO.Server/bin/Server/RMIServer.class
 TPO.Server/bin/hibernate.properties
 *.snap
->>>>>>> e6b87c0c297500000035ec1a0effc8575be99270
-.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+
