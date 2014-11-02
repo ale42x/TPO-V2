@@ -43,13 +43,20 @@ public class AreaDAO {
 		Session session2 = sf.openSession();
 		session2.beginTransaction();
 				
-		System.out.println("id deposito despues de la session ");
+		System.out.println("id deposito despues de la session "+id_deposito);
 		//Deposito deposito = (Deposito) session.createQuery("from Deposito where id_deposito = :id").setParameter(id_deposito, "id").uniqueResult();
-		Deposito deposito = (Deposito) session2.load(Deposito.class, id_deposito);
-		
+		//Deposito deposito = (Deposito) session2.load(Deposito.class, id_deposito);
+		Deposito depo = new Deposito();
+		depo.setSucursal(null);
+		depo = (Deposito) session2.createQuery("select descripcion from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
+		//Deposito deposito = (Deposito) session2.createQuery("select descripcion from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
+		//String depo = (String) session2.createQuery("select descripcion from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
 		session2.flush();
 		session2.close();
-		return deposito.getDescripcion();
+		
+		return depo.getDescripcion();
+		//return deposito.getDescripcion();
+		//return depo;
 	}
 
 	public String leerArea(int idArea) {
