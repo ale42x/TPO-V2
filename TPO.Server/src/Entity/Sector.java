@@ -1,10 +1,17 @@
 package Entity;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table (name="Sector")
-public class Sector {
+public class Sector implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private int id_Sector;
@@ -15,6 +22,7 @@ public class Sector {
 	private int gondola;
 	private int numero;
 	private String descripcion;
+	@Column(name="CondicionesEspeciales")
 	private String condicionEspecial;
 	
 	public int getId_Sector() {
