@@ -59,3 +59,7 @@ TPO.Cliente/bin/Inicio.class
 *.xmi
 *.index
 *.xmi
+TPO.Server/src/Server/RMIServer.java
+TPO.Server/src/hibernate.properties
+TPO.Server/bin/Server/RMIServer.class
+TPO.Server/bin/hibernate.properties

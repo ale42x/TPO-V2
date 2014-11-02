@@ -19,8 +19,8 @@ public class Inicio {
     	
     	try {
     		//System.setProperty("java.security.policy","C:/Users/Pablo/Desktop/UADE/2014/2do Cuatrimestre/Aplicaciones Distribuidas/2C2014/TPO/Code/TPO.Cliente/src/security.policy");
-    		//System.setProperty("java.security.policy","E:/Ale/JAVA/UADE/TPO/TPO V2/TPO.Server/src/security.policy");
-    		System.setProperty("java.security.policy","C:/Users/Diego/workspace/Repo2/TPO-V2/TPO.Server/src/security.policy");
+    		System.setProperty("java.security.policy","E:/Ale/JAVA/UADE/TPO/TPO V2/TPO.Server/src/security.policy");
+    		//System.setProperty("java.security.policy","C:/Users/Diego/workspace/Repo2/TPO-V2/TPO.Server/src/security.policy");
     		
     		if(System.getSecurityManager()==null)
     			System.setSecurityManager(new RMISecurityManager());

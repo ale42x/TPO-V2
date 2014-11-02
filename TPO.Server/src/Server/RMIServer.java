@@ -21,8 +21,8 @@ public class RMIServer {
 	private InterfaceEnvio remote;
 	public static void main(String[] args) throws AlreadyBoundException, IOException {
 		
-		System.setProperty("java.security.policy","C:/Users/Diego/workspace/Repo2/TPO-V2/TPO.Server/src/security.policy");
-		
+		//System.setProperty("java.security.policy","C:/Users/Diego/workspace/Repo2/TPO-V2/TPO.Server/src/security.policy");
+		System.setProperty("java.security.policy","E:/Ale/JAVA/UADE/TPOV2/TPO.Server/src/security.policy");
 		if(System.getSecurityManager()==null)
 			System.setSecurityManager(new RMISecurityManager());
 		
@@ -43,6 +43,7 @@ public class RMIServer {
 			remote = new Sistema();
 			
 	        //Naming.rebind ("//localhost/" + Constants.RMI_ID, remote);
+			
 	        Naming.rebind ("//localhost/TPOV2", remote);
 	        System.out.println("Fijado en //localhost/" + Constants.RMI_ID);
 		} catch (Exception e) {
