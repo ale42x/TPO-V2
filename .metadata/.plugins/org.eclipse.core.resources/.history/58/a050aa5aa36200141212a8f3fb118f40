@@ -43,7 +43,7 @@ public class RMIServer {
 			remote = new Sistema();
 			
 	        //Naming.rebind ("//localhost/" + Constants.RMI_ID, remote);
-	        Naming.rebind ("//localhost/TPOV2", remote);
+	        Naming.rebind ("//192.168.0.103/TPOV2", remote);
 	        System.out.println("Fijado en //localhost/" + Constants.RMI_ID);
 		} catch (Exception e) {
 			e.printStackTrace();
