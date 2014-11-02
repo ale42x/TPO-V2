@@ -2,9 +2,11 @@ package Entity;
 
 import java.sql.Date;
 
-import javax.persistence.*;
-
-import org.hibernate.annotations.Cascade;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 
 @Entity

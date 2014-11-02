@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.apache.commons.collections.functors.FalsePredicate;
+import org.hibernate.annotations.Proxy;
+
 
 @Entity
 @Table (name="Deposito")
@@ -18,6 +21,14 @@ public class Deposito {
 	@JoinColumn(name="id_Deposito")
 	private List<Sector> sectores = new ArrayList<Sector>();
 	
+	public Sucursal getSucursal() {
+		return sucursal;
+	}
+
+	public void setSucursal(Sucursal sucursal) {
+		this.sucursal = sucursal;
+	}
+
 	//@OneToOne
 	//@OneToOne(cascade = CascadeType.ALL)
     //@PrimaryKeyJoinColumn

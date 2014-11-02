@@ -1,10 +1,14 @@
 package DAO;
 
+import java.io.Serializable;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import Bean.SectorDTO;
 import Entity.Area;
 import Entity.Deposito;
+import Entity.Sector;
 import HBT.HibernateUtil;
 
 public class AreaDAO {
@@ -14,6 +18,7 @@ public class AreaDAO {
 	
 	public static AreaDAO getInstancia(){
 		if(instancia == null){
+			System.out.println("id deposito despues de la session ");
 			sf = HibernateUtil.getSessionFactory();
 			instancia = new AreaDAO();
 		}
@@ -35,26 +40,42 @@ public class AreaDAO {
 	}
 	
 	public String leerDeposito(int id_deposito) {
-		System.out.println("id deposito a leer antes de abrir la session " + id_deposito);
 		Session session2 = sf.openSession();
-		System.out.println("id deposito despues de la session " + id_deposito);
+		session2.beginTransaction();
+				
+		System.out.println("id deposito despues de la session ");
 		//Deposito deposito = (Deposito) session.createQuery("from Deposito where id_deposito = :id").setParameter(id_deposito, "id").uniqueResult();
 		Deposito deposito = (Deposito) session2.load(Deposito.class, id_deposito);
 		
+		session2.flush();
 		session2.close();
 		return deposito.getDescripcion();
 	}
 
 	public String leerArea(int idArea) {
 		
+		Session session = sf.openSession();
+		
 		Area area = new Area();
 		area.setId_Area(idArea);
 		
-		Session session = sf.openSession();
+		System.out.println("open session"+idArea);
+		
+		
 		//session.load(area, getClass());
 		session.get(Area.class, idArea);
 		
 		return area.getDescripcion();
+	}
+
+	public SectorDTO leerSector(int id_sector) {
+		Sector sector = new Sector();
+		sector.setId_Sector(id_sector);
+		
+		Session session = sf.openSession();
+		sector = (Sector) session.load(Sector.class, sector);
+		SectorDTO dto = new SectorDTO(sector.getId_Sector(), sector.getGondola(), sector.getNumero(), sector.getDescripcion(), sector.getCondicionEspecial());
+		return dto;
 	}
 	
 }

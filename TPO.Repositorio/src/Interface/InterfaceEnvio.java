@@ -13,5 +13,7 @@ public interface InterfaceEnvio extends Remote {
 	public String leerDeposito(int id_deposito)throws RemoteException;
 
 	public String leerArea(int idArea)throws RemoteException;
+
+	public SectorDTO leerSector(int i) throws RemoteException;
 	
 }
