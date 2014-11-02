@@ -61,3 +61,4 @@ TPO.Cliente/bin/Inicio.class
 *.xmi
 *.xmi
 .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
