@@ -75,7 +75,7 @@ public class AreaDAO {
 		Session session = sf.openSession();
 		//sector = (Sector) session.load(Sector.class, sector.getId_Sector());
 		//sector = (Sector) session.get(Sector.class,sector.getId_Sector());
-		System.out.println("Sector query "+id_sector);
+		System.out.println("Sector "+id_sector);
 		sector = (Sector) session.createQuery("from Sector where id_Sector = :id").setParameter("id", id_sector).uniqueResult();
 		
 		SectorDTO dto = new SectorDTO(sector.getId_Sector(), sector.getGondola(), sector.getNumero(), sector.getDescripcion(), sector.getCondicionEspecial());

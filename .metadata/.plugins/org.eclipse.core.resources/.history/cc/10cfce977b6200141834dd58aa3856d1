@@ -22,7 +22,6 @@ public class Sector implements Serializable{
 	private int gondola;
 	private int numero;
 	private String descripcion;
-	@Column(name="CondicionesEspeciales")
 	private String condicionEspecial;
 	
 	public int getId_Sector() {
