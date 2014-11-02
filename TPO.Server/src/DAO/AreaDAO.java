@@ -48,7 +48,7 @@ public class AreaDAO {
 		//Deposito deposito = (Deposito) session2.load(Deposito.class, id_deposito);
 		Deposito depo = new Deposito();
 		depo.setSucursal(null);
-		depo = (Deposito) session2.createQuery("select descripcion from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
+		depo = (Deposito) session2.createQuery("from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
 		//Deposito deposito = (Deposito) session2.createQuery("select descripcion from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
 		//String depo = (String) session2.createQuery("select descripcion from Deposito where id_Deposito = :id").setParameter("id", id_deposito).uniqueResult();
 		session2.flush();
